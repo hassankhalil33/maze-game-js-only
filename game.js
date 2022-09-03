@@ -38,6 +38,7 @@ function winEvent() {
 
     score += 5;
     document.querySelector(".example").textContent = "Score: " + score;
+    defaultState();
 };
 
 function touchedBorder() {
@@ -52,6 +53,7 @@ function touchedBorder() {
 
     score -= 10;
     document.querySelector(".example").textContent = "Score: " + score;
+    defaultState();
 };
 
 function cheaterCaught() {
