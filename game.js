@@ -1,9 +1,9 @@
 
-var scoreTracker = 0;
+var score = 0;
 
 function startGame() {
     document.querySelector(".example").style.textAlign = "center";
-    document.querySelector(".example").textContent = "Score: " + scoreTracker;
+    document.querySelector(".example").textContent = "Score: " + score;
     document.querySelector("#status").textContent = "Game Started!";
     document.querySelector("#end").addEventListener("mouseover", winEvent);
 
@@ -22,6 +22,8 @@ function winEvent() {
     for (var i = 0; i < document.querySelectorAll(".boundary").length; i++) {
         document.querySelectorAll(".boundary")[i].removeEventListener("mouseover", touchedBorder);
     };
+
+    score += 5;
 };
 
 function touchedBorder() {
@@ -32,6 +34,8 @@ function touchedBorder() {
     for (var i = 0; i < document.querySelectorAll(".boundary").length - 1; i++) {
         document.querySelectorAll(".boundary")[i].classList.add("youlose");
     };
+
+    score -= 10;
 };
 
 addEventListener("load", function () {
